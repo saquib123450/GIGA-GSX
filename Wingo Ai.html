@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ANXT PREDICTOR PRO | AI POWERED</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANXT PREDICTOR PRO | AI POWERED</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cyber-container">
+        <!-- Sidebar -->
+        <div class="cyber-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-robot"></i> GSX AI</h2>
+                <div class="status-indicator active"></div>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+                <li><i class="fas fa-chart-line"></i> Analytics</li>
+                <li><i class="fas fa-history"></i> History</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+                <li><i class="fas fa-robot"></i> AI Assistant</li>
+                <li><i class="fas fa-headset"></i> Support</li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar"><i class="fas fa-user-secret"></i></div>
+                    <div class="user-info">
+                        <span class="username">ADMIN</span>
+                        <span class="user-level">SUPER USER</span>
+                    </div>
+                </div>
+                <div class="contact-links">
+                    <a href="https://t.me/+70QJ6iXPvwxlOTA9" target="_blank"><i class="fab fa-telegram"></i> Developer</a>
+                    <a href="https://t.me/Aneaxity" target="_blank"><i class="fab fa-telegram"></i> Admin</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="cyber-main">
+            <!-- Header -->
+            <div class="cyber-header">
+                <div class="header-left">
+                    <div class="hamburger" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <h1>GIGA GSX AI <span class="version">v2.5.8</span></h1>
+                </div>
+                <div class="header-right">
+                    <div class="connection-status">
+                        <span class="status-dot"></span>
+                        <span>LIVE</span>
+                    </div>
+                    <div class="current-time" id="currentTime">--:--:--</div>
+                </div>
+            </div>
+
+            <!-- Prediction Dashboard -->
+            <div class="dashboard-grid">
+                <!-- Current Game Info -->
+                <div class="card current-game">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bolt"></i> CURRENT GAME</h3>
+                        <div class="card-actions">
+                            <button class="btn-refresh" id="refreshCurrentGame"><i class="fas fa-sync-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="game-period">
+                            <span class="label">PERIOD:</span>
+                            <span class="value" id="period-number">--</span>
+                        </div>
+                        <div class="countdown-timer">
+                            <div class="timer-display">
+                                <span id="minutes">00</span>:<span id="seconds">00</span>
+                            </div>
+                            <div class="timer-label">TIME REMAINING</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Prediction -->
+                <div class="card ai-prediction">
+                    <div class="card-header">
+                        <h3><i class="fas fa-brain"></i> AI PREDICTION</h3>
+                        <div class="prediction-accuracy">
+                            <span class="accuracy-value">98.7%</span>
+                            <span class="accuracy-label">ACCURACY</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="prediction-result">
+                            <div class="prediction-type">
+                                <span class="label">NEXT DRAW:</span>
+                                <span class="value prediction-value" id="prediction-size">--</span>
+                            </div>
+                            <div class="prediction-confidence">
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: 87%"></div>
+                                </div>
+                                <span class="confidence-value">87% CONFIDENCE</span>
+                            </div>
+                        </div>
+                        <div class="prediction-result">
+                            <div class="prediction-type">
+                                <span class="label">COLOR TREND:</span>
+                                <span class="value prediction-value" id="prediction-color">--</span>
+                            </div>
+                            <div class="prediction-confidence">
+                                <div class="confidence-bar">
+                                    <div class="confidence-fill" style="width: 92%"></div>
+                                </div>
+                                <span class="confidence-value">92% CONFIDENCE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-predict" id="advancedPredict">ADVANCED ANALYSIS</button>
+                    </div>
+                </div>
+
+                <!-- Stats Overview -->
+                <div class="card stats-overview">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-pie"></i> STATS OVERVIEW</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-value" id="win-rate">--%</div>
+                                <div class="stat-label">WIN RATE</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="current-streak">--</div>
+                                <div class="stat-label">CURRENT STREAK</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="max-streak">--</div>
+                                <div class="stat-label">MAX STREAK</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value" id="prediction-count">--</div>
+                                <div class="stat-label">TOTAL PREDICTIONS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Table -->
+                <div class="card history-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-table"></i> HISTORY (LAST 10 GAMES)</h3>
+                        <div class="card-actions">
+                            <button class="btn-refresh" id="refreshHistory"><i class="fas fa-sync-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>PERIOD</th>
+                                        <th>NUMBER</th>
+                                        <th>SIZE</th>
+                                        <th>COLOR</th>
+                                        <th>AI PREDICTION</th>
+                                        <th>RESULT</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="history-list">
+                                    <!-- Rows will be inserted by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Chatbot -->
+                <div class="card chatbot-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comment-dots"></i> AI ASSISTANT</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="chat-container" id="chatContainer">
+                            <div class="chat-message ai-message">
+                                <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                                <div class="message-content">
+                                    <div class="message-text">Hello! I'm your ANXT AI assistant. How can I help you today?</div>
+                                    <div class="message-time">Just now</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="chatInput" placeholder="Ask me anything about predictions...">
+                            <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Analysis -->
+                <div class="card advanced-analysis">
+                    <div class="card-header">
+                        <h3><i class="fas fa-microscope"></i> ADVANCED ANALYSIS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="analysis-tabs">
+                            <div class="tab active" data-tab="trend">TREND ANALYSIS</div>
+                            <div class="tab" data-tab="pattern">PATTERN RECOGNITION</div>
+                            <div class="tab" data-tab="algorithm">ALGORITHM VIEW</div>
+                        </div>
+                        <div class="analysis-content" id="trendAnalysis">
+                            <div class="analysis-result">
+                                <div class="result-label">PATTERN DETECTED:</div>
+                                <div class="result-value" id="pattern-detected">Analyzing...</div>
+                            </div>
+                            <div class="analysis-result">
+                                <div class="result-label">TREND STRENGTH:</div>
+                                <div class="result-value" id="trend-strength">--</div>
+                            </div>
+                            <div class="analysis-result">
+                                <div class="result-label">NEXT EXPECTED:</div>
+                                <div class="result-value" id="next-expected">--</div>
+                            </div>
+                            <div class="trend-chart" id="trendChart">
+                                <!-- Chart will be rendered here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prediction Modal -->
+        <div class="modal" id="predictionModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-crystal-ball"></i> ADVANCED PREDICTION RESULT</h3>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="prediction-details">
+                        <div class="detail-item">
+                            <span class="detail-label">PERIOD ANALYSIS:</span>
+                            <span class="detail-value" id="period-analysis">Calculating...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">ALGORITHM RESULT:</span>
+                            <span class="detail-value" id="algorithm-result">Calculating...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">AI VERDICT:</span>
+                            <span class="detail-value" id="ai-verdict">Calculating...</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">CONFIDENCE LEVEL:</span>
+                            <span class="detail-value" id="confidence-level">Calculating...</span>
+                        </div>
+                    </div>
+                    <div class="prediction-summary">
+                        <div class="summary-header">FINAL PREDICTION</div>
+                        <div class="summary-value" id="final-prediction">--</div>
+                        <div class="summary-footer">Based on advanced pattern recognition and AI analysis</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-confirm" id="confirmPrediction">CONFIRM PREDICTION</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
